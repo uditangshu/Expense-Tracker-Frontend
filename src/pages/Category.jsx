@@ -86,6 +86,7 @@ function Category() {
   return (
     <div className="max-w-md mx-auto p-4 pt-6 md:p-6 lg:p-12 bg-white rounded shadow-md">
       <h1 className="text-3xl font-bold mb-4">Categories</h1>
+      <h4 className='text-xl font-semibold pb-1'>create expenses in categories</h4>
       <ul className="list-none mb-4">
         {
         
