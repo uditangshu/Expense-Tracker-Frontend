@@ -139,7 +139,10 @@ function Home() {
           ))}
         </div>
       ) : (
+        <div>
+        <h1 className='text-2xl font-semibold py-4 flex justify-center'>Recent transactions</h1>
         <p className="text-gray-700 text-lg mb-4 ">No expenses yet!</p>
+        </div>
       )}
       <div className=' col-span-1 h-svh bg-slate-500'>
       <h1 className='text-2xl font-semibold py-4 flex justify-center bg-white'>Chart</h1>
