@@ -16,7 +16,7 @@ function App() {
         <Route path="/signin" element={<Signin/>} /> 
         <Route path="/signup" element={<Signup/>} />
         <Route path ="/"element={<Home/>}></Route>
-        <Route path ="/expenses/:catid"element={<Expenses/>}></Route>
+        <Route path ="/expenses/:catId"element={<Expenses/>}></Route>
       </Routes>
     </BrowserRouter>
   )

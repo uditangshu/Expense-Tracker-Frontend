@@ -13,7 +13,7 @@ export function Expenses() {
   const fetchExpenses = async (e) => {
     // e.preventDefault();
     try {
-      const response = await fetch(`http://127.0.0.1:8787/api/v1/expenses/all-expenses`,{
+      const response = await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/all-expenses`,{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -30,22 +30,23 @@ export function Expenses() {
   
   const handleCreateExpense = async (e) => {
     e.preventDefault();
+    console.log(newExpense.balance)
+    console.log(newExpense.description)
     try {
-      const response = await fetch(`http://127.0.0.1:8787/api/v1/expenses/${catId}`, {
+      const response = await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/${catId || undefined}`, {
         method: 'POST',
         headers: {
              'Content-Type': 'application/json',
              'Authorization': `${localStorage.getItem('jwtToken')}`
              },
         body: JSON.stringify({
-
         balance: parseFloat(newExpense.balance), 
         description: newExpense.description}),
       });
       
       const data = await response.json();
-      // console.log(data.balance);
-      // console.log(data.description)
+      console.log(data.balance);
+      console.log(data.description)
       setExpenses([...expenses, data]);
       setNewExpense({ balance: 0, description: '' });
     } catch (e) {
@@ -56,7 +57,7 @@ export function Expenses() {
   const handleUpdateExpense = async (id, updatedExpense) => {
     try {
      
-      const response = await fetch(`http://127.0.0.1:8787/api/v1/expenses/${id}`, {
+      const response = await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/${id}`, {
         method: 'PUT',
         headers: { 
             'Content-Type': 'application/json',
@@ -73,7 +74,7 @@ export function Expenses() {
 
   const handleDeleteExpense = async (id) => {
     try {
-      await fetch(`http://127.0.0.1:8787/api/v1/expenses/${id}`,{
+      await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/${id}`,{
          method: 'DELETE',
          headers: {
             'Authorization': `${localStorage.getItem('jwtToken')}`
@@ -89,16 +90,16 @@ export function Expenses() {
 
  
 return (
-  <div className="max-w-md mx-auto p-4 bg-white rounded shadow-md">
+  <div className="max-w-xl mx-auto p-4 bg-white rounded shadow-md">
   <h1 className="text-3xl text-center mb-4">Expenses</h1>
   <form onSubmit={handleCreateExpense} className="flex flex-col items-center">
-    <label className="block mb-2">Amount:</label>
+    <label className="block mb-2 ">Amount:</label>
     <input
       type="number"
       value={newExpense.balance}
       onChange={(e) => setNewExpense({...newExpense, balance: e.target.value })}
       required
-      className="p-2 pl-10 text-sm text-gray-700"
+      className="p-2 pl-10 text-sm text-gray-700 border-2 border-gray-400 rounded"
     />
     <label className="block mb-2">Description:</label>
     <input
@@ -106,7 +107,7 @@ return (
       value={newExpense.description}
       onChange={(e) => setNewExpense({...newExpense, description: e.target.value })}
       required
-      className="p-2 pl-10 text-sm text-gray-700"
+      className="p-2 pl-10 text-sm text-gray-700 border-2 border-gray-400 rounded"
     />
     <br />
     <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
@@ -119,10 +120,10 @@ return (
         <span className="mr-4">{expense.category || ''}</span>
         <span className="mr-4">${expense.balance}</span>
         <span className="mr-4">{expense.description}</span>
-        <button onClick={() => handleUpdateExpense(expense.id, { category: 'Updated Category', amount: 100 })} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mr-2">
+        <button onClick={() => handleUpdateExpense(expense.id, { category: 'Updated Category', amount: 100 })} className="bg-blue-500 hover:bg-blue-700 text-white float-right font-bold py-2 px-4 rounded ">
           Update
         </button>
-        <button onClick={() => handleDeleteExpense(expense.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+        <button onClick={() => handleDeleteExpense(expense.id)} className="bg-red-500 hover:bg-red-700 float-right text-white font-bold py-2 px-4 rounded mr-2">
           Delete
         </button>
       </li>
