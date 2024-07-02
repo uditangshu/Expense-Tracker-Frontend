@@ -146,7 +146,7 @@ function Home() {
       )}
       <div className=' col-span-1 h-svh bg-slate-500'>
       <h1 className='text-2xl font-semibold py-4 flex justify-center bg-white'>Chart</h1>
-      <div className=''>hello</div>
+      <div className='text-white'>Here we will have the expense chart</div>
       </div>
     </div > 
 </div>
