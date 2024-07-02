@@ -141,7 +141,7 @@ function Home() {
       ) : (
         <div>
         <h1 className='text-2xl font-semibold py-4 flex justify-center'>Recent transactions</h1>
-        <p className="text-gray-700 text-lg mb-4 ">No expenses yet!</p>
+        <p className="text-gray-700 text-lg mb-4py-4 flex justify-center">No expenses yet!</p>
         </div>
       )}
       <div className=' col-span-1 h-svh bg-slate-500'>
