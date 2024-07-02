@@ -118,22 +118,21 @@ function Home() {
             <p className="text-gray-700">${balance}</p>
           </div>
         </div>
-        <h2 className="text-2xl font-bold ">Expenses</h2>
-        <div className="max-w-md mx-auto pt-6  md:pt-12">
-          {/* {expenses > 0 ? (
+        <div className="max-w-md mx-auto pt-2  md:pt-4">
+          { Array.isArray(expenses) > 0 ? (
             <div className="grid grid-cols-1 gap-4">
               {expenses.map((expense, index) => (
                 <div key={index} className="bg-white shadow-md rounded p-4">
                   <h3 className="text-lg font-bold">{expense.description}</h3>
-                  <p className="text-lg font-bold text-red-600">${expense.balance.toLocaleString()}</p>
+                  <p className="text-lg font-bold text-red-600">${expense.balance}</p>
                 </div>
               ))}
             </div>
           ) : (
             <p className="text-gray-700 text-lg mb-4 ">No expenses yet!</p>
-          )} */}
+          )}
           <Link
-            className="block text-blue-400 hover:text-blue-600 hover:bg-gray-200"
+            className="block text-gray-600ay hover:text-gray-950 hover:bg-gray-200"
           to="/category"
           >
             View and create categories
