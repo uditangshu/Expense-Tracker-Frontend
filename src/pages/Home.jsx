@@ -44,7 +44,7 @@ function Home() {
   const fetchExpenses = async (e) => {
     // e.preventDefault();
     try {
-      const response = await fetch(`http://127.0.0.1:8787/api/v1/expenses/all-expenses`,{
+      const response = await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/all-expenses`,{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
