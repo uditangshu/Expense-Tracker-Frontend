@@ -12,7 +12,7 @@ function Category() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${DB_URL}.dev/api/v1/categories`, {
+        const response = await fetch(`${DB_URL}/api/v1/categories`, {
           method: "GET",
           headers: {
             'Content-Type': 'application/json',
