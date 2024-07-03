@@ -114,7 +114,11 @@ function Category() {
       <form className="mb-4">
         <label className="block mb-2">
           Create new category:
-          <input type="text" value={newCategoryName} onChange={e => setNewCategoryName(e.target.value)} className="w-full p-2 pl-10 text-sm text-gray-700 border-2 border-blue-500 " />
+          <input type="text"
+           value={newCategoryName} 
+           onChange={e => setNewCategoryName(e.target.value)} 
+           className="w-full p-2 pl-10 text-sm text-gray-700 border-2 border-blue-500 "
+           required />
         </label>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleCreateCategory}>Create</button>
       </form>
