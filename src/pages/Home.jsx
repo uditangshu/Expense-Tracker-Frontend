@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import Edit from '../components/Edit';
 import {EditButton} from '../components/EditButton';
+import BarChart from '../components/Chart';
 
 function Home() {
   const [username, setUsername] = useState('');
@@ -132,10 +133,11 @@ function Home() {
       <div className='pt-4 grid grid-cols-1 md:grid-cols-2 gap-1'>
       { Array.isArray(expenses) && expenses.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 shadow-lg ">
-           <h1 className='text-2xl font-semibold py-4 flex justify-center shadow-md'>Recent transactions</h1>
+           <h1 className='text-2xl font-semibold py-4 flex justify-center shadow-md h-16'>Recent transactions</h1>
           {expenses.slice(-5).map((expense, index) => (
             <div key={index} className="bg-white shadow-md rounded p-4">
               <h3 className="text-lg font-bold">{expense.description}</h3>
+              <p className="text-lg font-bold">categoryId: {expense.categoryId}</p>
               <p className="text-lg font-bold text-red-600">${expense.balance}</p>
             </div>
           ))}
@@ -149,9 +151,11 @@ function Home() {
             </div>
         </div>
       )}
-      <div className=' col-span-1 h-svh bg-slate-500'>
-      <h1 className='text-2xl font-semibold py-4 flex justify-center bg-white shadow-md pb-7'>Chart</h1>
-      <div className='text-white '>Here we will have the expense chart</div>
+      <div className=' col-span-1 h-svh bg-slate-300'>
+      <h1 className='text-2xl font-semibold py-4 flex justify-center bg-white shadow-md pb-6'>Chart</h1>
+      <div className='text-white '>
+        <BarChart/>
+      </div>
       </div>
     </div > 
 </div>
