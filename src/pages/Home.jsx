@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import Edit from '../components/Edit';
 import {EditButton} from '../components/EditButton';
 import BarChart from '../components/Chart';
+import { DB_URL } from '../DB_URL';
+
 
 function Home() {
   const [username, setUsername] = useState('');
@@ -17,7 +19,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://backend.server-uditangshu-2004.workers.dev/api/v1/home', {
+        const response = await fetch(`${DB_URL}/api/v1/home`, {
           method: "GET",
           headers: {
             'Content-Type': 'application/json',
@@ -45,7 +47,7 @@ function Home() {
   const fetchExpenses = async (e) => {
     // e.preventDefault();
     try {
-      const response = await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/all-expenses`,{
+      const response = await fetch(`${DB_URL}/api/v1/expenses/all-expenses`,{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -72,7 +74,7 @@ function Home() {
 
   const handleEditSubmit = async ({newUsername}) => {
     try {
-      const response = await fetch('https://backend.server-uditangshu-2004.workers.dev/api/v1/home', {
+      const response = await fetch(`${DB_URL}/api/v1/home`, {
         method: "PUT",
         headers: {
           'Content-Type': 'application/json',

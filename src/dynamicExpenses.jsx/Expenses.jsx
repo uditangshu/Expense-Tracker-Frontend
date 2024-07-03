@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { DB_URL } from '../DB_URL';
 
 export function Expenses() {
   const [expenses, setExpenses] = useState([]);
@@ -13,7 +14,7 @@ export function Expenses() {
   const fetchExpenses = async (e) => {
     // e.preventDefault();
     try {
-      const response = await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/all-expenses`,{
+      const response = await fetch(`${DB_URL}/api/v1/expenses/all-expenses`,{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -33,7 +34,7 @@ export function Expenses() {
     console.log(newExpense.balance)
     console.log(newExpense.description)
     try {
-      const response = await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/${catId || undefined}`, {
+      const response = await fetch(`${DB_URL}/api/v1/expenses/${catId || undefined}`, {
         method: 'POST',
         headers: {
              'Content-Type': 'application/json',
@@ -55,7 +56,7 @@ export function Expenses() {
   const handleUpdateExpense = async (id, updatedExpense) => {
     try {
      
-      const response = await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/${id}`, {
+      const response = await fetch(`${DB_URL}/api/v1/expenses/${id}`, {
         method: 'PUT',
         headers: { 
             'Content-Type': 'application/json',
@@ -72,7 +73,7 @@ export function Expenses() {
 
   const handleDeleteExpense = async (id) => {
     try {
-      await fetch(`https://backend.server-uditangshu-2004.workers.dev/api/v1/expenses/${id}`,{
+      await fetch(`${DB_URL}/api/v1/expenses/${id}`,{
          method: 'DELETE',
          headers: {
             'Authorization': `${localStorage.getItem('jwtToken')}`
