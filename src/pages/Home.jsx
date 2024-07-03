@@ -152,7 +152,7 @@ function Home() {
         </div>
       )}
       <div className=' col-span-1 h-svh bg-slate-500'>
-      <h1 className='text-2xl font-semibold py-4 flex justify-center bg-white shadow-md pb-6'>Chart</h1>
+      <h1 className='text-2xl font-semibold py-4 flex justify-center bg-white shadow-md pb-6 chart-container'>Chart</h1>
       <div className='text-white '>
         <BarChart/>
       </div>
