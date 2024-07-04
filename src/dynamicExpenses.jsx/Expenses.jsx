@@ -129,13 +129,6 @@ return (
       </li>
     ))}
   </ul>
-  <div>{expenses.map((props)=>{
-    return(
-      <div>
-       {props.userId}
-      </div>
-    )
-  })}</div>
 </div>
 )
 }
