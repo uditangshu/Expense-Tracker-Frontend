@@ -94,13 +94,18 @@ function Home() {
   const handleCreateClick = ()=>{
     navigate("/category",{replace: true})
   }
+  const handleHomeClick = ()=>{
+    navigate("/",{replace: true})
+  }
 
   return (
     <div className="container mx-auto p-4 pt-6 md:p-4 lg:p-4 w-screen">
       <header className="flex justify-between mb-4 ">
         <div className="flex items-center">
-          <h1 className="text-3xl font-bold">MyPaisa</h1>
-          <span className="text-lg font-bold ml-4">{username}</span>
+          <button onClick={handleHomeClick}className="text-3xl font-bold">MyPaisa
+            <div className='text-xl font-semibold'>{username}</div>
+          </button>
+          
         </div>
         <div className="flex items-center">
           <button className="bg-blue-500 hover:bg-blue-700 shadow-md text-white font-bold py-2 px-4 rounded" onClick={handleLogout}>Logout</button>
