@@ -144,7 +144,7 @@ function Home() {
           {expenses.slice(-5).map((expense, index) => (
             <div key={index} className="bg-white shadow-md rounded p-4">
               <h3 className="text-lg font-bold">{expense.description}</h3>
-              <p className="text-lg font-bold">categoryId: {expense.categoryId}</p>
+              <p className="text-lg font-bold">category: {expense.category}</p>
               <p className="text-lg font-bold text-red-600">${expense.balance}</p>
             </div>
           ))}

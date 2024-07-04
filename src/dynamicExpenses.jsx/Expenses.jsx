@@ -118,6 +118,14 @@ return (
       required
       className="p-2 pl-10 text-sm text-gray-700 border-2 border-gray-400 rounded"
     />
+     <label className="block mb-2 ">category:</label>
+    <input
+      type="text"
+      value={newExpense.category}
+      // onChange={(e) => setNewExpense({...newExpense, balance: e.target.value })}
+      required
+      className="p-2 pl-10 text-sm text-gray-700 border-2 border-gray-400 rounded"
+    />
     <br />
     <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
       Create Expense
