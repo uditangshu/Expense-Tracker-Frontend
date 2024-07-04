@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { DB_URL } from '../DB_URL';
 
 
@@ -7,7 +7,7 @@ export function Expenses() {
   const [expenses, setExpenses] = useState([]);
   const [newExpense, setNewExpense] = useState({ balance: 0, description: ''});
   const {catId} = useParams();
-  
+  const navigate = useNavigate();
   useEffect(() => {
     fetchExpenses();
   }, []);
