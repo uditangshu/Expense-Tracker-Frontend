@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { DB_URL } from '../DB_URL';
-import { handleHomeClick } from '../components/homeClick';
+
 
 export function Expenses() {
   const [expenses, setExpenses] = useState([]);
@@ -88,7 +88,11 @@ export function Expenses() {
       console.log(e)
     } 
   };
-
+  const handleHomeClick=()=>{
+    navigate("/",{replace: true})
+  }
+  
+ 
 return (
   <div className="max-w-xl mx-auto p-4 bg-white rounded shadow-md">
     <header>

@@ -5,7 +5,7 @@ import Edit from '../components/Edit';
 import {EditButton} from '../components/EditButton';
 import BarChart from '../components/Chart';
 import { DB_URL } from '../DB_URL';
-import { handleHomeClick } from '../components/homeClick';
+
 
 
 function Home() {
@@ -95,7 +95,9 @@ function Home() {
   const handleCreateClick = ()=>{
     navigate("/category",{replace: true})
   }
-
+  const handleHomeClick=()=>{
+    navigate("/",{replace: true})
+  }
   return (
     <div className="container mx-auto p-4 pt-6 md:p-4 lg:p-4 w-screen">
       <header className="flex justify-between mb-4 ">
