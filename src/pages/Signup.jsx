@@ -15,7 +15,7 @@ function Signup() {
     e.preventDefault();
     const userData = { username, email, password, balance,income };
     try {
-      const response = await fetch(`${DB_URL}.dev/api/v1/user/signup`, {
+      const response = await fetch(`${DB_URL}/api/v1/user/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
