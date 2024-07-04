@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HiPlus} from "react-icons/hi";
 import { useNavigate } from 'react-router-dom';
 import { DB_URL } from '../DB_URL';
+import { handleHomeClick } from '../components/homeClick';
 function Category() {
   const [categories, setCategories] = useState([]);
   const [newCategoryName, setNewCategoryName] = useState('');
@@ -83,9 +84,7 @@ function Category() {
     }
     
   };
-  const handleHomeClick=()=>{
-    navigate("/",{replace: true})
-  }
+
 
   return (
     <div className="max-w-md mx-auto p-4 pt-2 md:p-6 lg:p-12 bg-white rounded shadow-md">

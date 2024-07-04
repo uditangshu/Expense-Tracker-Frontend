@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { DB_URL } from '../DB_URL';
+import { handleHomeClick } from '../components/homeClick';
 
 export function Expenses() {
   const [expenses, setExpenses] = useState([]);
@@ -88,10 +89,13 @@ export function Expenses() {
     } 
   };
 
-  
- 
 return (
   <div className="max-w-xl mx-auto p-4 bg-white rounded shadow-md">
+    <header>
+        <div className="flex justify-between">
+          <button onClick={handleHomeClick} className='text-3xl font-bold pb-4'>MyPaisa</button>
+        </div>
+     </header>
   <h1 className="text-3xl text-center mb-4">Expenses</h1>
   <form onSubmit={handleCreateExpense} className="flex flex-col items-center">
     <label className="block mb-2 ">Amount:</label>
